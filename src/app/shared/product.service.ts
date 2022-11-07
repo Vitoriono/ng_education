@@ -6,6 +6,7 @@ import { FbResponse } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
+
 })
 export class ProductService {
 

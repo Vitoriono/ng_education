@@ -11,6 +11,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { AuthInterceptor } from './shared/auth.interseptor';
 import { FormlySelectModule } from '@ngx-formly/core/select';
+import { ProductComponent } from './product/product.component';
+
+import {  NO_ERRORS_SCHEMA} from '@angular/core';
+
 
 
 @NgModule({
@@ -19,8 +23,10 @@ import { FormlySelectModule } from '@ngx-formly/core/select';
     MainLayoutComponent,
     MainPageComponent,
     ProductPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    ProductComponent
   ],
+  schemas: [NO_ERRORS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
