@@ -7,8 +7,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-page.component.scss']
 })
 export class AddPageComponent implements OnInit {
-  form: FormGroup
-  submitted = false
+  form: FormGroup;
+  submitted = false;
 
 
   constructor() { }
@@ -16,13 +16,29 @@ export class AddPageComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       type: new FormControl(null, Validators.required),
-      tytle: new FormControl(null, Validators.required),
+      title: new FormControl(null, Validators.required),
       photo: new FormControl(null, Validators.required),
       info: new FormControl(null, Validators.required),
       price: new FormControl(null, Validators.required),
     })
   }
 
-  submit() {}
+  submit() {
+    if(this.form.invalid){
+      return
+    }
+
+    // this.submitted = true;
+
+    const product = {
+      type: this.form.value.type,
+      title: this.form.value.title,
+      photo: this.form.value.photo,
+      info: this.form.value.info,
+      price: this.form.value.price,
+    }
+
+    console.log(this.form);
+  }
 
 }

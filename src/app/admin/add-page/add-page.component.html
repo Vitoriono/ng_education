@@ -1,10 +1,14 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
 
-  <h2>Login as administrator</h2>
+  <h2 class="text-center">Add product</h2>
 
   <div class="form-control">
       <label for="type">Type</label>
-      <input id="type" type="type" formControlName="type">
+      <select formControlName="type" >
+        <option value="Phone">Phone</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Laptop">Laptop</option>
+      </select>
       <div *ngIf="form.get('type').touched && form.get('type').invalid" class="validation">
           <small *ngIf="form.get('type').errors.required">Chose product type </small>
       </div>
@@ -16,14 +20,17 @@
           <small *ngIf="form.get('title').errors.required">Enter product type </small>
       </div>
   </div>
-  <div class="form-control">
-      <label for="type">Photo</label>
 
-  </div>
   <div class="form-control">
-      <label for="type">Information:</label>
-
+      <label for="photo">Photo:</label>
+      <quill-editor formControlName="photo"></quill-editor>
   </div>
+
+  <div class="form-control">
+    <label for="info">Information:</label>
+    <quill-editor formControlName="info"></quill-editor>
+  </div>
+
   <div class="form-control">
       <label for="price">Price</label>
       <input id="price" type="price" formControlName="price">
@@ -31,12 +38,6 @@
           <small *ngIf="form.get('price').errors.required">Enter product price </small>
       </div>
   </div>
-
-
-
-
-  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Log-in</button>
-
-
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="form['inalid'] || submitted">Log-in</button>
 </form>
 
