@@ -1,1 +1,6 @@
-<p>main-page works!</p>
+
+<div  *ngIf="products$ | async as products">
+  <div *ngFor="let product of $any(products) ">
+    {{product.title}}
+  </div>
+</div>
