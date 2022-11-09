@@ -15,6 +15,7 @@ import { ProductComponent } from './product/product.component';
 
 import {  NO_ERRORS_SCHEMA} from '@angular/core';
 import { SortingPipe } from './shared/sorting.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -35,6 +36,7 @@ import { SortingPipe } from './shared/sorting.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormlySelectModule,
+    ReactiveFormsModule,
     QuillModule.forRoot()
   ],
   providers: [
