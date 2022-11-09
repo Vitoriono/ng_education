@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AuthGuard } from "../shared/auth.guard";
 import { QuillModule } from 'ngx-quill';
 import { FormlySelectModule } from '@ngx-formly/core/select';
+import { SearchPipe } from "../shared/search.pipe";
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { FormlySelectModule } from '@ngx-formly/core/select';
         AddPageComponent,
         EditPageComponent,
         OrdersPageComponent,
+        SearchPipe
 
     ],
     imports:[

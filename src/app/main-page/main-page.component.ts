@@ -19,7 +19,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   products$
 
   constructor(
-    private productServ: ProductService
+    public productServ: ProductService
 
   ) { }
 

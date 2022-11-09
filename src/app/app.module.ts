@@ -14,6 +14,7 @@ import { FormlySelectModule } from '@ngx-formly/core/select';
 import { ProductComponent } from './product/product.component';
 
 import {  NO_ERRORS_SCHEMA} from '@angular/core';
+import { SortingPipe } from './shared/sorting.pipe';
 
 
 
@@ -24,7 +25,9 @@ import {  NO_ERRORS_SCHEMA} from '@angular/core';
     MainPageComponent,
     ProductPageComponent,
     CartPageComponent,
-    ProductComponent
+    ProductComponent,
+    SortingPipe,
+
   ],
   schemas: [NO_ERRORS_SCHEMA],
   imports: [
