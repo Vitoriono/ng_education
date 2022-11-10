@@ -21,8 +21,7 @@ export class OrdersPageComponent implements OnInit {
 
   ngOnInit() {
     this.pSub = this.orderServ.getAll().subscribe( orders => {
-      console.log(orders)
-      this.orders = orders
+    this.orders = orders
     })
   }
 
