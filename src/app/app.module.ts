@@ -16,6 +16,8 @@ import { ProductComponent } from './product/product.component';
 import {  NO_ERRORS_SCHEMA} from '@angular/core';
 import { SortingPipe } from './shared/sorting.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -37,7 +39,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormlySelectModule,
     ReactiveFormsModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     {
